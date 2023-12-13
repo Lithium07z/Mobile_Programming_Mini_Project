@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- 연산 입력 출력부 -->
+    <TextView
+        android:id="@+id/arithmeticIntput"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/white"
+        android:gravity="end|bottom"
+        android:padding="10dp"
+        android:textSize="24sp" />
+
+    <!-- 연산 결과 출력부 -->
+    <TextView
+        android:id="@+id/arithmeticResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/white"
+        android:gravity="end"
+        android:hint="0"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <!-- 넘버 패드 첫번째 행 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <!--숫자 버튼은 모두 같은 스타일의 양식을 공유하므로
+            values의 styles.xml 파일에 NumberPadStyle로
+            공통된 스타일을 저장해 놓았음                -->
+        <Button
+            android:id="@+id/btnAC"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnAC"
+            android:text="AC" />
+
+        <Button
+            android:id="@+id/btnClear"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnClear"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/btnBack"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnBack"
+            android:text="⬅" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnOper"
+            android:text="÷" />
+    </LinearLayout>
+
+    <!-- 넘버 패드 두번째 행 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn7"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnOper"
+            android:text="x" />
+    </LinearLayout>
+
+    <!-- 넘버 패드 세번째 행 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn4"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btnSubtract"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnOper"
+            android:text="-" />
+    </LinearLayout>
+
+    <!-- 넘버 패드 네번째 행 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn1"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btnPlus"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnOper"
+            android:text="+" />
+    </LinearLayout>
+
+    <!-- 넘버 패드 다섯번째 행 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSaveLoadReset"
+            style="@style/NumberPadButtonStyle"
+            android:textSize="25sp"
+            android:text="SLR"/>
+
+        <Button
+            android:id="@+id/btn0"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnNum"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnDot"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnDot"
+            android:text="." />
+
+        <Button
+            android:id="@+id/btnEqual"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnEqual"
+            android:text="=" />
+    </LinearLayout>
+
+    <!-- 넘버 패드 여섯번째 행 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnIncrease"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnIncrease"
+            android:text="⬆" />
+
+        <Button
+            android:id="@+id/btnDecrease"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnDecrease"
+            android:text="⬇" />
+
+        <Button
+            android:id="@+id/btnCalendar"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnCalendar"
+            android:text="📅" />
+
+        <Button
+            android:id="@+id/btnCall"
+            style="@style/NumberPadButtonStyle"
+            android:onClick="btnCall"
+            android:text="☎" />
+    </LinearLayout>
+</LinearLayout>
